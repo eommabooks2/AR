@@ -37,9 +37,70 @@ AFRAME.registerComponent("점프하기", {
   },
 });
 
+// 오른쪽으로 이동하기 애니메이션 //
+// animation-right //
+AFRAME.registerComponent("오른쪽으로", {
+  init: function () {
+    this.entity = this.el;
+
+    this.entity.setAttribute("animation__right", {
+      property: "position",
+      to: "5 0 0.5",
+      dur: "1000",
+      loop: "true",
+      easing: "easeInOutQuad",
+    });
+  },
+});
+
+// 오른쪽으로 이동하기 애니메이션 //
+// animation-left //
+AFRAME.registerComponent("오른쪽으로이동하고멈추기", {
+  init: function () {
+    this.entity = this.el;
+
+    this.entity.setAttribute("animation__left__stop", {
+      property: "position",
+      to: "5 0 0.5",
+      dur: "2000",
+      easing: "easeInOutQuad",
+    });
+  },
+});
+
+// 왼쪽으로 이동하기 애니메이션 //
+// animation-left //
+AFRAME.registerComponent("왼쪽으로이동하고멈추기", {
+  init: function () {
+    this.entity = this.el;
+
+    this.entity.setAttribute("animation__left__stop", {
+      property: "position",
+      to: "-5 0 0.5",
+      dur: "2000",
+      easing: "easeInOutQuad",
+    });
+  },
+});
+
+// 아래쪽으로 이동하기 애니메이션 //
+// animation-down //
+AFRAME.registerComponent("아래쪽으로이동하고멈추기", {
+  init: function () {
+    this.entity = this.el;
+
+    this.entity.setAttribute("animation__down__stop", {
+      property: "position",
+      to: "0 -5 0.5",
+      dur: "2000",
+      easing: "easeInOutQuad",
+    });
+  },
+});
+
 // 확장-축소 반복, 커지고 작아지고 //
 // animation-scale //
-AFRAME.registerComponent("animation-scale", {
+AFRAME.registerComponent("커졌다가작아지기", {
   init: function () {
     this.entity = this.el;
     this.fromScale = defaultScale.join(" ");
