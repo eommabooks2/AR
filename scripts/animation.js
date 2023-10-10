@@ -8,7 +8,7 @@
 // animation-rotation-slow // 빙글빙글 (느리게) //
 // animation-rotation-z // 오뚜기 //
 // animation-opacity // 사라졌다 나타났다 //
-let defaultScale = [8, 8, 8];
+let defaultScale = [8, 12, 12];
 
 // toScale x와 y 사이즈를 1씩 늘림
 const toScale = (x, y, z) => {
@@ -188,7 +188,7 @@ AFRAME.registerComponent("animation-scale-stop-reverse", {
 
 // 크게 확장-축소 반복, 커지고 작아지고 (큰버전) //
 // animation-scale-large //
-AFRAME.registerComponent("animation-scale-large", {
+AFRAME.registerComponent("크게커졌다가작아지기", {
   init: function () {
     this.entity = this.el;
     this.fromScale = defaultScale.join(" ");

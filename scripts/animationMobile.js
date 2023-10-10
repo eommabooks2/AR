@@ -1,4 +1,4 @@
-let defaultScale = [5, 5, 5];
+let defaultScale = [6, 9, 9];
 
 // toScale x와 y 사이즈를 1씩 늘림
 const toScale = (x, y, z) => {
@@ -12,7 +12,7 @@ const toScale = (x, y, z) => {
 
 // 점프 애니메이션 //
 // animation-jump //
-AFRAME.registerComponent("animation-jump", {
+AFRAME.registerComponent("점프하기", {
   init: function () {
     this.entity = this.el;
 
@@ -27,9 +27,70 @@ AFRAME.registerComponent("animation-jump", {
   },
 });
 
+// 오른쪽으로 이동하기 애니메이션 //
+// animation-right //
+AFRAME.registerComponent("오른쪽으로", {
+  init: function () {
+    this.entity = this.el;
+
+    this.entity.setAttribute("animation__right", {
+      property: "position",
+      to: "5 0 0.5",
+      dur: "1000",
+      loop: "true",
+      easing: "easeInOutQuad",
+    });
+  },
+});
+
+// 오른쪽으로 이동하기 애니메이션 //
+// animation-left //
+AFRAME.registerComponent("오른쪽으로이동하고멈추기", {
+  init: function () {
+    this.entity = this.el;
+
+    this.entity.setAttribute("animation__left__stop", {
+      property: "position",
+      to: "5 0 0.5",
+      dur: "2000",
+      easing: "easeInOutQuad",
+    });
+  },
+});
+
+// 왼쪽으로 이동하기 애니메이션 //
+// animation-left //
+AFRAME.registerComponent("왼쪽으로이동하고멈추기", {
+  init: function () {
+    this.entity = this.el;
+
+    this.entity.setAttribute("animation__left__stop", {
+      property: "position",
+      to: "-5 0 0.5",
+      dur: "2000",
+      easing: "easeInOutQuad",
+    });
+  },
+});
+
+// 아래쪽으로 이동하기 애니메이션 //
+// animation-down //
+AFRAME.registerComponent("아래쪽으로이동하고멈추기", {
+  init: function () {
+    this.entity = this.el;
+
+    this.entity.setAttribute("animation__down__stop", {
+      property: "position",
+      to: "0 -5 0.5",
+      dur: "2000",
+      easing: "easeInOutQuad",
+    });
+  },
+});
+
 // 확장-축소 반복, 커지고 작아지고 //
 // animation-scale //
-AFRAME.registerComponent("animation-scale", {
+AFRAME.registerComponent("커졌다가작아지기", {
   init: function () {
     this.entity = this.el;
     this.fromScale = defaultScale.join(" ");
@@ -47,7 +108,7 @@ AFRAME.registerComponent("animation-scale", {
 
 // 확장하고 멈춤 //
 // animation-scale-stop //
-AFRAME.registerComponent("animation-scale-stop", {
+AFRAME.registerComponent("커졌다가멈추기", {
   init: function () {
     this.entity = this.el;
     this.fromScale = defaultScale.join(" ");
@@ -87,7 +148,7 @@ AFRAME.registerComponent("animation-scale-stop-reverse", {
 
 // 크게 확장-축소 반복, 커지고 작아지고 (큰버전) //
 // animation-scale-large //
-AFRAME.registerComponent("animation-scale-large", {
+AFRAME.registerComponent("크게커졌다가작아지기", {
   init: function () {
     this.entity = this.el;
     this.fromScale = defaultScale.join(" ");
@@ -107,7 +168,7 @@ AFRAME.registerComponent("animation-scale-large", {
 
 // 늘였다 줄였다 (위아래로) //
 // animation-scale-updown //
-AFRAME.registerComponent("animation-scale-updown", {
+AFRAME.registerComponent("위아래로늘렸다가줄이기", {
   init: function () {
     this.entity = this.el;
 
@@ -125,7 +186,7 @@ AFRAME.registerComponent("animation-scale-updown", {
 
 // 늘였다 줄였다 (양옆으로) //
 // animation-scale-side //
-AFRAME.registerComponent("animation-scale-side", {
+AFRAME.registerComponent("양옆으로늘렸다가줄이기", {
   init: function () {
     this.entity = this.el;
 
@@ -143,7 +204,7 @@ AFRAME.registerComponent("animation-scale-side", {
 
 // 빙글빙글 (빠르게) //
 // animation-rotation-fast //
-AFRAME.registerComponent("animation-rotation-fast", {
+AFRAME.registerComponent("빠르게회전하기", {
   init: function () {
     this.entity = this.el;
 
@@ -160,7 +221,7 @@ AFRAME.registerComponent("animation-rotation-fast", {
 
 // 빙글빙글 (느리게) //
 // animation-rotation-slow //
-AFRAME.registerComponent("animation-rotation-slow", {
+AFRAME.registerComponent("느리게회전하기", {
   init: function () {
     this.entity = this.el;
 
@@ -194,7 +255,7 @@ AFRAME.registerComponent("animation-rotation-y", {
 
 // 오뚜기 //
 // animation-rotation-z //
-AFRAME.registerComponent("animation-rotation-z", {
+AFRAME.registerComponent("오뚜기", {
   init: function () {
     this.entity = this.el;
 
@@ -212,7 +273,7 @@ AFRAME.registerComponent("animation-rotation-z", {
 
 // 사라졌다 나타났다 //
 // animation-opacity //
-AFRAME.registerComponent("animation-opacity", {
+AFRAME.registerComponent("사라졌다가나타나기", {
   init: function () {
     this.entity = this.el;
 
