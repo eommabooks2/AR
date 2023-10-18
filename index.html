@@ -307,9 +307,11 @@
         <img id="책도시락4-2" src="./assets/책도시락/61/4-2.png" />
         <img id="책도시락6-2" src="./assets/책도시락/62/6-2.png" />
         <img id="책도시락7-2" src="./assets/책도시락/63/7-2.png" />
+        <img id="책도시락10-1" src="./assets/책도시락/67/10-1.png" />
+        <img id="책도시락10-2" src="./assets/책도시락/67/10-2.png" />
         <img id="책도시락14-2" src="./assets/책도시락/69/14-2.png" />
         <img id="책도시락18-2" src="./assets/책도시락/71/18-2.png" />
-        <img id="책도시19-2" src="./assets/책도시락/72/19-2.png" />
+        <img id="책도시락19-2" src="./assets/책도시락/72/19-2.png" />
         <audio
           id="책도시락1-3"
           src="./assets/책도시락/60/1-3.mp3"
@@ -325,6 +327,12 @@
         <audio
           id="책도시락9-3"
           src="./assets/책도시락/66/9-3.mp3"
+          type="audio/mp3"
+          preload="auto"
+        ></audio>
+        <audio
+          id="책도시락10-3"
+          src="./assets/책도시락/67/10-3.mp3"
           type="audio/mp3"
           preload="auto"
         ></audio>
@@ -1194,8 +1202,22 @@
 
       <!-- 책도시락67 -->
       <a-marker type="barcode" value="67">
-        <a-sound src="#책도시락9-3" autoplay="false" volume="5" soundhandler>
+        <a-sound src="#책도시락10-3" autoplay="false" volume="5" soundhandler>
         </a-sound>
+        <a-entity rotation="0 0 0">
+            <a-image
+            src="#책도시락10-1"
+            position="0 2.5 0"
+            rotation="0 0 0"
+            scale="8 12 12"
+          ></a-image>
+          <a-image
+            src="#책도시락10-2"
+            position="0 2.5 0.5"
+            rotation="0 0 0"
+            scale="8 12 12"
+          ></a-image>
+        </a-entity>
       </a-marker>
 
       <!-- 책도시락68 -->
